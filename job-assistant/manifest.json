@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Job Finder",
+  "version": "1.1",
+  "description": "ALerts you when you are on a job page",
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": ["notifications", "tabs", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "16": "icons/asistant.png",
+      "32": "icons/asistant.png",
+      "48": "icons/asistant.png",
+      "128": "icons/asistant.png"
+    }
+  },
+  "icons": {
+    "16": "icons/asistant.png",
+    "32": "icons/asistant.png",
+    "48": "icons/asistant.png",
+    "128": "icons/asistant.png"
+  }
+}
